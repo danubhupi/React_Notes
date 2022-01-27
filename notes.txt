@@ -1,0 +1,35 @@
+React notes
+
+
+MODULE 3
+
+
+It uses JSX to return HTML components.
+
+Components make up the whole application or page in react
+
+Each react is basically some HTML which is returned through a function
+
+JSX is the syntax through which we can wrote HTML in JS files
+
+Each sepparate component is stored in a separeate file and that is a rule
+
+Only the root element is rendered directly to the page and the rest and inside one or another ()
+nesting
+
+One important rule is that each component should only have one ROOT 
+which means that only one parent should be there in a component
+
+
+each component has its separate css file generally and the css file is imported in the compnent.js file
+ in the component file in jsx syntax in HTML elements class is written as className and this className
+is taken from the respective css file
+
+
+as in JS we had ${} in which we can write JS expressions in jSX react we have {} here we can write expressions
+or variable names and the value of the those would be used inside the tags
+
+React also has feature called PROPS , it is used to send data between components, as data is needed
+to make the page dynamic so data is sent through props by putting it in {}, data is sent as key value pairs
+and a single object recives all of it in the receiving functions arguments
+
