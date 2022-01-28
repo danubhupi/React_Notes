@@ -33,3 +33,44 @@ React also has feature called PROPS , it is used to send data between components
 to make the page dynamic so data is sent through props by putting it in {}, data is sent as key value pairs
 and a single object recives all of it in the receiving functions arguments
 
+
+V V V imp
+
+props are collection of the data arguments sent or basically group of arguments so ,it is a collection
+so the values in it can be accessed only through the name of argument that is being sent
+
+
+for ex:- <ExpenseItems item={expense[0}/>
+
+then in expense items values can only be accessed through 
+props.item.nameofField
+
+
+props can be used to get the content 
+props.children can be used to get the content inside the braces of an component
+like a component can be writeen as
+<component> the content </component>
+so the content between the opening and closing of an component can be used through props.children
+
+
+STATE is a KEY CONCEPT in REACT
+
+
+Each component instance has is its own state and all of them are independent of each other
+
+useState is one of the most important hooks in React
+It is a function that is imported from the react library 
+It is used to declare state  ,these are objects whose value when changed calls the component function of
+the component where that particular useState was registered or used and what that results in is
+that the if any thing in the view of page has to be changed,it is updated by calling component function again with the updated value
+
+its is used like
+ const [name0fState, setNameofState]=useState(initialValueOfState);
+
+useState returns an array which consists of two elements, first one is the pointer to current value of 
+state and the seconf=d one is a function that is used to update the value of state
+
+it is called like setNameofState(newValue); after this the component function will be called again
+hence updating the view
+
+State change only affects the instance of the component where the the state is changed
