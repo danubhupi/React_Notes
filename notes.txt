@@ -74,3 +74,44 @@ it is called like setNameofState(newValue); after this the component function wi
 hence updating the view
 
 State change only affects the instance of the component where the the state is changed
+
+and we can have multiple states per component
+
+
+we can use one state for multiple variables, by passing in an object as value ,then we can use that one function returned to update states like
+
+const [kuchBhi,setKuchBhi]=useState({
+                            key1:'',
+                            key2:'',
+                            key3:''
+                                    })
+
+now we can update states by => setKuchBhi((prevState)=>{
+                                                        return {...prevState,key1:value};
+                                        });
+
+as react automatically gives the prev state and it works even if multiple state updates are working together, thats why this is fail proof
+
+similarly we can do this for the values in the state object and this is the right way to update state when we use only previous state in updating
+to the new state 
+
+
+
+Two Way Binding :-
+
+Changes made in input should reflect in UI and change smade in Ui should reflect in input
+
+we send data from parents to child through PROPS
+
+IMPPPPP
+
+we send data from child to parents through functions
+
+we send functions through parent to the child through props and then we call those functions at a suitable
+palce inside the child with an argument , that argument then reaches the parent and thisw is how we send data from child to parent
+
+
+
+
+
+
