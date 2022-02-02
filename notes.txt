@@ -111,6 +111,29 @@ we send functions through parent to the child through props and then we call tho
 palce inside the child with an argument , that argument then reaches the parent and thisw is how we send data from child to parent
 
 
+Suppose there is a list or an array of components then react will AUTOMATICALLY render the all(They must be placed in {} )
+
+for ex :-  {props.items.map((item)=>{ <Component selected={item.title} /> })};
+
+as we know map return san array so it that array will automatically be rendered 
+
+
+there can be conditional return statements
+meaning that we can return different code on different conditions from the same component
+and that is very useful
+
+
+also we add style through Static Css files but we can also add styling through the jsc code through what is known as 
+DYNAMIC STYLING for that what we do is we add style{{}} to a component or HTML elment
+style={{}} the outer curly braces are just to show that a value resides inside 
+and the other curly braces signify an object
+
+Here it is done through 
+style={{
+backgroundColor:'red',
+height:'20%',
+'background-color':'red'}}
+
 
 
 
