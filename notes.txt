@@ -135,6 +135,24 @@ height:'20%',
 'background-color':'red'}}
 
 
+styled-components are smart way to style an element ,generally when we use extrnal css files those ss styles are made global hence
+if a program or project has multipls developers, they might have used same className for different elements or components and style
+
+henxce a problem will occur in this
+
+styled components give a way of defining styles for a particular elements without the user giving class names
+class names are decided by sc hence the above problem is solved
+
+It is also very smart as it uses the props on its own in correct manner
+
+There is another way to make sure that we dont face the above problem that is by using css modules
+
+Css modules are used by changing the name of the xyz.css file to xyz.module.css
+
+then it is imported like import styles from './xyz.module.css'
+
+then inside className={style.acb} , where abc is a className inside xyz.css or className={style[acb]} 
+
 
 
 
