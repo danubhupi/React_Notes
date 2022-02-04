@@ -154,5 +154,56 @@ then it is imported like import styles from './xyz.module.css'
 then inside className={style.acb} , where abc is a className inside xyz.css or className={style[acb]} 
 
 
+Aswe know that each component can return only one root component , that is why we have to use a lot of divs to get the elements inside
+one parent
+
+and this happens with all the components resulting in the react application having a lot of divs
+this hampers the performance of react as it has to check every div to check whoch one to render
+
+This can be solved 
+
+1.  By making a wrapper component and in it we return props.children  thats it ,without any wrapping divs
+ then we call use it like 
+<Wrapper>
+    <h2>kuch bhi</h2>
+<input type etxt> </input>
+<Wrapper/>
+
+what this leads to is a way around the javascript rules
+
+
+Second way is by using 
+
+<React.Fragment>
+<h2>kuch bhi</h2>
+<input type etxt> </input>
+
+<React.Fragment>
+
+This is similar to the Wrapper component we made above
+
+
+Portals
+
+Portals are used to place the JSX code or component in the code at a place we want to this does not have any effect on the functionality of our code
+
+it is just made to make our code symantically correct and clean
+
+it wont be place where we we placed it during the making of our components but at a different place altogether that has been specified by us
+
+to use it
+
+we import ReactDOM from 'react-dom';
+
+then we use 
+return 
+<React.Fragment>
+    ReactDOM.createPortal(<Component/>,dcoument.getElementById('place-where-it-should-be-put');
+</React.Fragment>
+
+Hence done
+
+
+
 
 
