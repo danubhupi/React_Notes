@@ -204,6 +204,34 @@ return
 Hence done
 
 
+useRef is another hook in React 
+It can be used to have a reference to a DOM element in REACT (like we use doucment.getElement or queryselector in VANILAA JS)
+
+so its default value is nothing
+
+ex:-
+
+const nameref=useRef();
+
+then to reference to an element we add ref={nameref} to its attributes ,like this:-
+
+return 
+<react.Fragment>
+    
+    <input ref={nameref} type='text'/>
+    <h2>Using a ref</h2>
+</react.Fragment>
+
+
+Now we have a refernce to that input element in nameref
+refs always have an current prop in them so for example we access the value of the input by
+
+nameref.current.value
+
+These can be used when we only need to read the data and it is not neccesary to usState there
+
+tThese type of components or elements then come under Uncontrolled elements or componenets because there state is not controlled by REACT directly
+
 
 
 
