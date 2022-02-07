@@ -233,5 +233,77 @@ These can be used when we only need to read the data and it is not neccesary to 
 tThese type of components or elements then come under Uncontrolled elements or componenets because there state is not controlled by REACT directly
 
 
+MOST IPORTANT after useState
+
+useEffect hook used to deal with Side Effects ,side effects are things that  generally take place out of the scope of a component function like
+rendering the changed component happens inside its scope but Fetching some data or calling an api http request are all out of the scope of the
+component function 
+
+
+V V V imp  :- It is also used when we want to re rerun some logic when a particular thing is chamged
+
+useeffect helps in dealing with code which should be executed in response to something
+
+So these are handled inside the useEffect like for example we need to send a http request once the page loads ,so there's no point in semding the request 
+each time an component is re-rendered so we can put it in useEffect
+
+
+in the function inside the useEffect we can return a function which is called CLEANUP Function , this fuction runs everytime before the execution of the useeffect function except when the copmponent is loaded for the first time in the page
+
+this means suppose we load a page then the CLEANUP func wont run because obviously there wouldnt be anything to CLEANUP as it rums before the USEeffect function'and till that time the useEffect function wouldnt have ran.
+
+
+Syntax =>
+
+useEffect(()=>{ Function which runs at each rendering if dependences are change},[dependencies are kept here]);
+
+
+
+
+useReducer is also a react hook which is used for State Management like useState ,
+we use useReducer in conditions where we think that the state is complex ex : - a state made after combining multiple states , 
+or a state which needs complex instructions before updating
+
+In these type of cases we prefer using useReducer
+
+like when we have a complex state updating logic
+
+SYNTAX:-
+
+const [xyzState,dispatchXyzState]=useReducer(func1,intialState,intialFunc);
+
+It also returns 2 object one is the state snapshot and the second is the dispacth function
+the dispacth function is used to dispacth a action or to send data or value to func1 acccording to whic the state will beupdateed
+
+the func1 then uses the info given it to from dispacth function to return the updated state
+
+the func1 takes two areguments first is the prevState and the second one is the action from the dispacth unction
+
+EX:- 
+
+ const [emailState,dispatchEmailState] =useReducer(emailReducer,{val:'',isValid:null});
+
+      dispatchEmailState({type:'USER_INPUT',val:event.target.value});
+
+ 
+
+const emailReducer=(prevState,action)=>{
+
+  if(action.type==='USER_INPUT'){
+    return {val:action.val,isValid: action.val.includes('@')};
+  }
+  else if(action.type==='INPUT_BLUR'){
+    return {val:prevState.val,isValid:prevState.isValid};
+  }
+ return {val:'',isValid:false};
+
+}
+
+
+
+
+
+  
+
 
 
