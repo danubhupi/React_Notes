@@ -10,7 +10,7 @@ Components make up the whole application or page in react
 
 Each react is basically some HTML which is returned through a function
 
-JSX is the syntax through which we can wrote HTML in JS files
+JSX is the syntax through which we can write HTML in JS files
 
 Each sepparate component is stored in a separeate file and that is a rule
 
@@ -40,7 +40,7 @@ props are collection of the data arguments sent or basically group of arguments 
 so the values in it can be accessed only through the name of argument that is being sent
 
 
-for ex:- <ExpenseItems item={expense[0}/>
+for ex:- <ExpenseItems item={expense[0]}/>
 
 then in expense items values can only be accessed through 
 props.item.nameofField
@@ -299,6 +299,61 @@ const emailReducer=(prevState,action)=>{
 
 }
 
+
+USEContext another important feature of React
+
+
+Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+
+const CtxFunc=React.createContext({
+
+        //insert values as key value pairs as in a object
+
+item:[],
+total:0
+});
+
+
+it is used like
+
+<CtxFunc.Provider value={{
+        // here the values that we want to use are put like
+
+        
+        item:[a,b,c,d],
+        total:10
+
+}}>
+
+
+//Inbetween this the components are wrapped which can use the COntext like
+<APP/>
+//because we will use the ctx throught th eapp
+
+<CtxFunc.Provider/>
+
+in the place we want to use the context or context value like
+
+const ctx=useContext(CtxFunc);
+then we will access the values of context through ctx similary we can do for functions
+
+usually we put the values used inside the ctx values in states so that when ever the value changes 
+the context value changes and it is reflected on the wholle app
+
+
+ex:-
+
+    item:items,
+total:totalVal
+
+
+where items and totalval are states
+
+
+
+
+
+Module 12:-
 
 
 
