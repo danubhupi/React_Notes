@@ -377,6 +377,8 @@ it is usefull in place where not reevaluating the childrens will be of large hel
 React.memo works by comparing the props like if we passed abc , def ,efg as props then before the next reevaluatiom
 React.memo will compare the current abc ,efg  ,def to previous values and if there is any difference then it will be reevaluated
 
+(new objects will be created in the parent component duting evry reeevaluation and hence)
+
 though there is one catch objects in js even with same values are considered to be diffrent so if an object has been used a props
 then react.memo() will think that it is changing everytime because it is due to js hence the reevaluation will be done evrytime
 because according to it props are changed (as even objects willmsame values are considered to be differernt)
@@ -385,7 +387,33 @@ objects also include functions
 this is not the case with primitive datatypes like ex true , 1,'a',true these will be checked and considered to be same as the
 previous ones
 
-hence 
+
+
+
+There is a solution to the problem faced by Objects and it is using useCallback hook
+
+what it does is it save sthe function somewhere unside the internal storag eof React and it is not reevaluated each time the component function is reevaulated or reexecuted  , hence with these no new object is created and then React.memo recieves values( if objects are used as props) that are compareable hence 
+
+
+const func = useCallback(()=>{ 
+the funvtion that wewant to return},[dependecy array]);
+
+here also like useEffect we use a dependency array as the useCallback stores the function and suppose there are some variable  
+that are being used in the function then the vlaue of that wont be changed in we dont use a dependency array .
+
+ex
+val=true;
+
+const func = useCallback(()=>{ 
+
+        if(val===true){console.log('yo');}
+});
+
+here no matter the current value of val yo will be logged out 
+
+hence we need to update the function and that is done when we add val to the dependency rarray
+
+ 
 
 
 
