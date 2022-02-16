@@ -355,6 +355,23 @@ where items and totalval are states
 
 Module 12:-
 
+Module 12 is about how react works behind the scenes 
+so every time state is changed ,context is changed or props are changed a COMPONENT is REVALUATED
+
+REVALUATED does not mean RERENDERED this is how REACT improves performance
+React checks if things are changed bymaking a component tree and only Rerenders the part that has changed even if inside a component
+a part is changed  ALL OF THE COMPONENT IS NOT RERENDERED only the part where th change is made is rerendered
+
+REVALUATION IS DIFFERENT THEN RERENDERING
+
+Children components Porps are checked to see if they need to be rendred but even if there props are not changed still they are REVALUATED 
+we can stop this by using 
+export default React.memo(name of export)
+
+in the children component
+although it does increse performance but it is not useful in cases where the children component tree is small
+
+it is usefull in place where not reevaluating the childrens will be of large help
 
 
 
