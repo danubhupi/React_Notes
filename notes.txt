@@ -413,6 +413,17 @@ here no matter the current value of val yo will be logged out
 
 hence we need to update the function and that is done when we add val to the dependency rarray
 
+
+As here we use useCallback for function similarly we use useMemo for objects like arrays etc
+we just bind it in the useMemo();
+
+
+
+
+Leanrd abour sendong requests from React it is the same as sending request from a vanilla js app as even react is basically just js
+
+also used firebase realtime db for it
+
  
 
 
