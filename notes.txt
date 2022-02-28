@@ -424,6 +424,17 @@ Leanrd abour sendong requests from React it is the same as sending request from 
 
 also used firebase realtime db for it
 
+
+
+
+Custom Hooks:
+
+
+Custom Hooks are basically functions that are used to do things 
+even react hooks re just functions
+
+But there is a advantage of Custom Hooks and that is that we can use InBuilt Hooks inside custom hooks 
+
  
 
 
